@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fake-vue</title>
+</head>
+<body>
+<div id="app">
+  <p>{{ name}}</p>
+  <p k-text="name"></p>
+  <p>{{age }}<span>{{ name }}</span></p>
+  <input type="text" k-model="name"/><br/>
+  <button @click="changeName">click</button>
+  <div k-html="html"></div>
+</div>
+</body>
+</html>
