@@ -34,7 +34,7 @@ export default class FakeVue {
       })
     });
 
-    new Observer(this);// 遍历元素
+    new Observer(this.$data);// 遍历元素
     new Compile(this); // 编译，对于html部分的转化
 
     // 调用生命周期
