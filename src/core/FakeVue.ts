@@ -22,6 +22,18 @@ export default class FakeVue {
     this._$options = options;
     this._$data = options.data;
 
+    Object.keys(this._$data).forEach(key => {
+      // 对$data进行代理
+      Object.defineProperty(this, key, {
+        get(): any {
+          return this.$data[key];
+        },
+        set(v: any): void {
+          this.$data[key] = v;
+        }
+      })
+    });
+
     new Observer(this);// 遍历元素
     new Compile(this); // 编译，对于html部分的转化
 
