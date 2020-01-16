@@ -20,16 +20,6 @@ export class Observer {
 
     Object.keys(obj).forEach((key) => {
       this.defineReactive(obj, key, obj[key]);
-
-      // 对$data进行代理
-      Object.defineProperty(this.vm, key, {
-        get(): any {
-          return this.$data[key];
-        },
-        set(v: any): void {
-          this.$data[key] = v;
-        }
-      })
     })
   }
 
